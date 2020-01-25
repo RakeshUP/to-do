@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.2"
+  },
+  "scripts": {
+    "start:dev":"nodemon --exec babel-node index.js",
+    "build": "babel *.js --out-dir ./build",
+    "prebuild": "rm -rf build/*",
+    "start": "NODE_ENV=production node ./build/index.js",
+    "prestart": "npm build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "nodemon": "^2.0.2"
+  }
+}
